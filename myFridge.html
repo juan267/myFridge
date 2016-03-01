@@ -1,0 +1,51 @@
+<head>
+  <title>myFridge</title>
+ <script type="text/javascript" src="//code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> container}}
+</body>
+
+<template name="container">
+  <div classp="container">
+    <div class="left">
+      {{> fridge}}
+    </div>
+    <div class="right">
+      {{> productList}}
+    </div>
+  </div>
+</template>
+
+<template name="fridge">
+  <div id="fridge">
+    <img src="empty-fridge.jpg" alt="fridge" class="image-responsive">
+    <ul>
+      {{#each products}}
+        <li>{{> productListItem}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="productList">
+  <div id="supermarket" class="box">
+    <ul id="products">
+      {{#each products}}
+        <li>{{> productListItem}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="productListItem">
+  <img src="{{img}}" data-id="{{_id}}" class="image-responsive product-image draggable">
+</template>
+
+
+
+
+
+
